@@ -76,13 +76,20 @@ public class WoodCutting extends ActiveScript implements PaintListener
 	     
 	     g.setColor(Color.WHITE);
 	     g.drawString("Run Time         :" + runTime.toElapsedString(), 21, 360);
-	     g.drawString("Experience Gained:" + sd.experience(Skills.WOODCUTTING)+"("+sd.experience(Rate.HOUR, Skills.WOODCUTTING)+")", 21, 375);
+	     g.drawString("Wood Cutting Experience Gained:" + sd.experience(Skills.WOODCUTTING)+"("+sd.experience(Rate.HOUR, Skills.WOODCUTTING)+")", 21, 375);
 	     g.drawString("Level (gained)   :" + Skills.getLevel(Skills.WOODCUTTING)+"(+"+ sd.level(Skills.WOODCUTTING)+")", 21, 390);
 	     g.drawString("Status           :" + Variables.status,21,405);
+	     
+	     if(Variables.burn)
+	     {
+	    	 g.drawString("Fire Making Experience Gained: " + sd.experience(Skills.FIREMAKING)+"("+sd.experience(Rate.HOUR, Skills.FIREMAKING)+")", 320, 360);
+	    	 g.drawString("Level (gained)   :" + Skills.getLevel(Skills.FIREMAKING)+"(+"+ sd.level(Skills.FIREMAKING)+")", 320, 370);
+	     }
+	     
 	     g.setColor(Color.GRAY);
 	     g.drawString("made by K.", 400, 420);
-	     
-	     g.setColor(Mouse.isPressed()?Color.WHITE:Color.RED);
+	  
+	     g.setColor(Mouse.isPressed()?Color.RED:Color.WHITE);
 	     g.drawOval(p.x-3, p.y-2, 3, 3);
 		
 	}
