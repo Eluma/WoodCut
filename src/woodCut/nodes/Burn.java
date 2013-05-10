@@ -33,7 +33,7 @@ public class Burn extends Node {
 				{
 					fire = SceneEntities.getNearest(Variables.fireId);
 					if(fire == null)
-						break;
+						break;// can change to lightFire(). but when the fire goes off most likely most of the logs are gone.
 					else if(Inventory.getCount(Variables.logId)==0)
 						break;
 						sleep(2000);
